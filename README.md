@@ -3,7 +3,13 @@ shp2pgsql RESTful API on a imatia/docker-postgis container
 
 ## Deployment
 
-`docker run -p 29643:9643 -p 25432:5432 --name imatia-postgis -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=mysecretpassword -d elcodedocle/docker-rest-shp2psql-postgis`
+```
+docker run -p 29643:9643 -p 25432:5432 --name imatia-postgis \ 
+-e POSTGRES_USER=docker \
+-e POSTGRES_PASSWORD=mysecretpassword \ 
+-e SHP_TEMP_STORAGE_PATH=/tmp \ 
+-d elcodedocle/docker-rest-shp2psql-postgis
+```
 
 You can also provide the following env vars:
 
