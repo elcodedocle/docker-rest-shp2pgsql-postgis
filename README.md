@@ -48,3 +48,7 @@ curl -k \
 ## Notes
 
 At this development stage the service is not secured, nor the input parameters are validated. Since the command is being executed inside the docker container there is not a lot of damage to be done if the service is accidentally exposed where it shouldn't, but do not deploy it on production environments!
+
+## See also
+
+https://github.com/imatia/docker-postgis
