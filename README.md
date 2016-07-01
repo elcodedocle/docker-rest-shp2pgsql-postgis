@@ -42,7 +42,7 @@ curl -k \
   -F "table=mytable" \
   -F "droptable=true" \
   -F "returnsql=false" \
-  https://localhost:29060/shp2pgsql/execute
+  https://localhost:29643/shp2pgsql/execute
 ```
 
 ## Notes
