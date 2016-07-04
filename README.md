@@ -24,7 +24,7 @@ Otherwise the generated SQL will be imported on the postgres+postgis deployed on
 
 ## Usage
 
-This service expects a `.zip` file with containing a `shp` layer definition and its related resources. It will execute the shp2pgsql command on the container with the provided parameters. 
+This service expects a `.zip` file with containing a `shp` layer definition and its related resources. It will execute the `shp2pgsql` command on the container with the provided parameters. 
 
 ### SwaggerUI
 
@@ -38,16 +38,17 @@ curl -k \
   -F "srid=4269:2163" \
   -F "geocolumn=mycolumn" \
   -F "indexgeocolumn=true" \
-  -F "schema=myschema" \
-  -F "table=mytable" \
+  -F "database=database" \
+  -F "schemaandtable=myschema.mytable" \
   -F "droptable=true" \
   -F "returnsql=false" \
+  -F "importsql=true" \
   https://localhost:29643/shp2pgsql/execute
 ```
 
 ## Notes
 
-At this development stage the service is not secured, nor the input parameters are validated. Since the command is being executed inside the docker container there is not a lot of damage to be done if the service is accidentally exposed where it shouldn't, but do not deploy it on production environments!
+At this development stage the service is not secured, nor the input parameters are validated. Since the command is being executed inside the docker container there is not a lot of damage to be done if the service is accidentally exposed where it shouldn't, but *do not deploy it on production environments*!
 
 ## See also
 
