@@ -17,6 +17,6 @@ RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | te
     apt-get install -y oracle-java8-set-default && \
     apt-get clean
 RUN sh -c 'touch /app.jar'
-RUN echo "sh -c 'java -Djava.security.egd=file:/dev/./urandom -jar /app.jar --tmppath=$SHP_TEMP_STORAGE_PATH --pghost=$REMOTE_PGHOST --pgport=$REMOTE_PGPORT --pguser=$REMOTE_PGUSER --pgpassword=$REMOTE_PGPASSWORD' > init_app.sh"
+RUN echo "sh -c 'java -Djava.security.egd=file:/dev/./urandom -jar /app.jar --tmppath=$SHP_TEMP_STORAGE_PATH --pghost=$REMOTE_PGHOST --pgport=$REMOTE_PGPORT --pguser=$REMOTE_PGUSER --pgpassword=$REMOTE_PGPASSWORD'" > init_app.sh
 RUN chmod 777 init_app.sh
 RUN mv init_app.sh /docker-entrypoint-initdb.d
