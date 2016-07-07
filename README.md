@@ -30,6 +30,8 @@ This service expects a `.zip` file with containing a `shp` layer definition and 
 
 Open a browser on the docker host and navigate to https://localhost:29643/swagger-ui.html
 
+![Imatia shp2pgsql service SwaggerUI invocation](https://cloud.githubusercontent.com/assets/3731026/16668368/f079fc18-4490-11e6-9f6c-68120abcdca5.png)
+
 ### curl
 
 ```bash
