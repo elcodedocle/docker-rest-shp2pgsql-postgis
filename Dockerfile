@@ -1,5 +1,5 @@
 FROM imatia/docker-postgis
-ADD sg-rest-shp2pgsql-postgis-docker-0.0.1.jar app.jar
+ADD app/sg-rest-shp2pgsql-postgis-docker-0.0.1.jar app.jar
 ENV SHP_TEMP_STORAGE_PATH /tmp
 ENV REMOTE_PGHOST localhost
 ENV REMOTE_PGPORT 5432
