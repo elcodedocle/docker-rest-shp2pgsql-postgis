@@ -9,8 +9,6 @@ ENV REMOTE_PGUSER $POSTGRES_USER
 ENV REMOTE_PGPASSWORD $POSTGRES_PASSWORD
 ENV PGPASSWORD $POSTGRES_PASSWORD
 EXPOSE 9643
-# Uncomment to expose JVM remote debug on port 8000
-EXPOSE 8000
 # OpenJDK 8
 RUN echo "deb http://ftp.de.debian.org/debian jessie-backports main" | tee /etc/apt/sources.list.d/webupd8team-java.list && apt-get update && apt-get install -y openjdk-8-jdk
 # Oracle JDK 8
