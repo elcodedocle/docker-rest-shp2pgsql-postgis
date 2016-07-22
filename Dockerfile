@@ -35,8 +35,6 @@ RUN echo "deb http://ftp.de.debian.org/debian jessie-backports main" | tee /etc/
 RUN apt-get install -y curl
 RUN curl -o app.jar https://artifactory.imatia.com/public-artifactory/sg-releases-local/com/imatia/sg/sg-rest-shp2pgsql-postgis-docker/0.0.3/sg-rest-shp2pgsql-postgis-docker-0.0.3.jar
 
-ADD keystore.jks keystore.jks
-
 RUN sh -c 'touch /app.jar'
 RUN echo "[ \"\$SHP2PGSQL_REMOTE_DEBUG\" = true ] && export SHP2PGSQL_REMOTE_DEBUG_STR=\"-agentlib:jdwp=transport=dt_socket,server=y,address=8000,suspend=n\" || export SHP2PGSQL_REMOTE_DEBUG_STR=\"\"" > init_app.sh
 # app.jar start script with optional JVM remote debug on port 8000
