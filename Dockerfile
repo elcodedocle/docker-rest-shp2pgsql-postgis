@@ -35,8 +35,6 @@ RUN echo "deb http://ftp.de.debian.org/debian jessie-backports main" | tee /etc/
 RUN apt-get install -y curl
 RUN curl -o app.jar https://artifactory.imatia.com/public-artifactory/sg-releases-local/com/imatia/sg/sg-rest-shp2pgsql-postgis-docker/0.0.3/sg-rest-shp2pgsql-postgis-docker-0.0.3.jar
 
-# get the specified app build from the project's maven target folder
-ADD sg-rest-shp2pgsql-postgis-docker-0.0.3.jar app.jar
 ADD keystore.jks keystore.jks
 
 RUN sh -c 'touch /app.jar'
